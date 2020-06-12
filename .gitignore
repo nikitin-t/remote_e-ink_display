@@ -1,0 +1,6 @@
+.directory
+build/
+*.bin
+*/.directory
+*/build/
+*/*.bin
