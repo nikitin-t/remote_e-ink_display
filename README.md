@@ -34,11 +34,16 @@ For build ble112 part:
 > You may programming with **CC Debuger** or [CCLib](https://github.com/wavesoft/CCLib) for Arduino
 
 For build STM32 part:
-1. Download and install **make**, **gcc-arm-none-eabi** and **stlink** on your system
-2. Build firmware
+1. Download and install **cmake**, **gcc-arm-none-eabi** and **stlink** on your system
+2. Generate a project for GNU-make or another system supporting CMake
 ```
-> cd path/to/remote_e-ink_display/firmware
-> make
+> mkdir path/to/remote_e-ink_display/firmware/build
+> cd path/to/remote_e-ink_display/firmware/build
+> cmake -DCMAKE_TOOLCHAIN_FILE=./toolchain.cmake ..
+```
+3. Build firmware
+```
+> cmake --build .
 ```
 3. Flashing
 ```
